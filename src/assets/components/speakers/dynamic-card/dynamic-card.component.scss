@@ -1,0 +1,112 @@
+div.speaker-container {
+	width: 310px;
+	// height: 412px;
+	background-color: rgb(5, 44, 73);
+
+	img {
+		width: 310px;
+		height: 210px;
+	}
+
+	.speaker-info {
+		color: white;
+		padding: 16px;
+		padding-bottom: 24px;
+
+		.speaker-name {
+			font-size: 20px;
+			font-weight: 500;
+			margin: 0;
+		}
+
+		.speaker-company {
+			font-size: 16px;
+			font-weight: 400;
+			margin-bottom: 5px;
+		}
+
+		.speaker-job {
+			font-size: 14px;
+			font-weight: 500;
+			margin-bottom: 0;
+		}
+	}
+
+	.speaker-footer {
+		display: flex;
+		padding: 8px;
+		align-items: center;
+
+		.actions {
+			padding: 16px;
+
+			a {
+				text-decoration: none;
+				margin: 0;
+				border-bottom: 0;
+
+				button {
+					// display: inline-flex;
+					// flex: 0 0 auto;
+					// outline: 0;
+					padding: 12px;
+					overflow: visible;
+					border: 0;
+					// border-radius: 50%;
+					background-color: transparent;
+
+					i {
+						display: inline-block;
+						font-size: 1.5rem;
+						color: white;
+					}
+				}
+			}
+		}
+
+		.expand-comment {
+			margin-left: auto;
+			color: white;
+			border: 0;
+			background-color: transparent;
+			padding: 12px;
+
+			i {
+				display: inline-block;
+			}
+		}
+	}
+
+	.speaker-separator {
+		justify-content: center;
+		align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+
+		.line {
+			width: 100px;
+			height: 0.3rem;
+			background-color: white;
+			overflow: hidden;
+		}
+
+		.circle {
+			width: 2rem;
+			height: 2rem;
+			border: 0.3rem solid white;
+			border-radius: 50%;
+		}
+	}
+
+	.speaker-description {
+		padding: 16px;
+		padding-bottom: 24px;
+
+		p {
+			color: white;
+			font-size: 16px;
+			text-align: justify;
+			margin: 0;
+		}
+	}
+}

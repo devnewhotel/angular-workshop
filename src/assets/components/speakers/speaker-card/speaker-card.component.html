@@ -1,0 +1,35 @@
+<div class="speaker-container">
+	<img [src]="data.photo">
+	<div class="speaker-info">
+		<p class="speaker-name">{{ data.name }}</p>
+		<p class="speaker-company">{{ data.company }}</p>
+		<p class="speaker-job">{{ data.job }}</p>
+	</div>
+	<div class="speaker-footer">
+		<div class="actions">
+			<a [href]="data.website" target="_blank">
+				<button type="button"><i class="fal fa-globe"></i></button>
+			</a>
+			<a [href]="data.twitter" target="_blank">
+				<button type="button"><i class="fab fa-twitter"></i></button>
+			</a>
+			<a [href]="data.linkedin" target="_blank">
+				<button type="button"><i class="fab fa-linkedin"></i></button>
+			</a>
+			<a [href]="data.github" target="_blank">
+				<button type="button"><i class="fab fa-github"></i></button>
+			</a>
+		</div>
+		<button type="button" class="expand-comment">
+			<i class="fas fa-chevron-down"></i>
+		</button>
+	</div>
+	<div class="speaker-separator">
+		<div class="line"></div>
+		<div class="circle"></div>
+		<div class="line"></div>
+	</div>
+	<div class="speaker-description">
+		<p>{{ data.description }}</p>
+	</div>
+</div>

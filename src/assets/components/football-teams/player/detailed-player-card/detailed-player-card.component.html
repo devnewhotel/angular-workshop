@@ -1,0 +1,22 @@
+<div class="player-container" (click)="onClickCard()">
+	<div class="row">
+		<img [src]="player.photo">
+		<div class="more-info">
+			<p class="property">Current Team</p>
+			<p class="value text-truncate text-truncate-sm">{{ player.currentteam }}</p>
+			<p class="property">City</p>
+			<p class="value">{{ player.cityborn }}</p>
+			<p class="property">Birth date</p>
+			<p class="value">{{ player.birthdate }}</p>
+			<p class="property">Total games</p>
+			<p class="value">{{ player.totalgames }}</p>
+			<!-- <p class="property">Total minutes</p>
+			<p class="value">{{ player.totalminutes }}</p> -->
+		</div>
+	</div>
+	<div class="color-division"></div>
+	<div class="player-info">
+		<p class="player-name">{{ player.fullname }}</p>
+		<p class="player-position">{{ player.position }}</p>
+	</div>
+</div>

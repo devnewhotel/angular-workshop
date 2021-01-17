@@ -1,0 +1,77 @@
+<ng-container *ngIf="1 as selectedPill">
+	<div panelToolbar class="panel-toolbar">
+		<ul id="demo_panel-tabs" class="nav nav-pills border-bottom-0" role="tablist">
+			<li class="nav-item">
+				<a class="nav-link cur-p players-pill" [class.active]="selectedPill===1" (click)="selectedPill=1" data-toggle="tab"  role="tab">Jogadores</a>
+			</li>
+			<li class="nav-item">
+				<a class="nav-link cur-p coaches-pill" [class.active]="selectedPill===2" (click)="selectedPill=2" data-toggle="tab"  role="tab">Equipa Técnica</a>
+			</li>
+		</ul>
+	</div>
+	<div panelContent>
+		<tabset class="tabs-nav-hidden">
+			<tab [active]="selectedPill===1">
+				<div class="position-header">
+					<p>Guarda-redes</p>
+				</div>
+				<div class="row">
+					<ng-container *ngFor="let player of guardaredes">
+						<ng-container *ngIf="player.expanded; else collapsed">
+							<smart-detailed-player-card [player]="player" (onClick)="onClickPlayer($event, 'guardaredes')"></smart-detailed-player-card>
+						</ng-container>
+						<ng-template #collapsed>
+							<smart-player-card [player]="player" (onClick)="onClickPlayer($event, 'guardaredes')"></smart-player-card>
+						</ng-template>
+					</ng-container>
+				</div>
+				<div class="position-header">
+					<p>Defesa</p>
+				</div>
+				<div class="row">
+					<ng-container *ngFor="let player of defesas">
+						<ng-container *ngIf="player.expanded; else collapsed">
+							<smart-detailed-player-card [player]="player" (onClick)="onClickPlayer($event, 'defesa')"></smart-detailed-player-card>
+						</ng-container>
+						<ng-template #collapsed>
+							<smart-player-card [player]="player" (onClick)="onClickPlayer($event, 'defesa')"></smart-player-card>
+						</ng-template>
+					</ng-container>
+				</div>
+				<div class="position-header">
+					<p>Médio</p>
+				</div>
+				<div class="row">
+					<ng-container *ngFor="let player of medios">
+						<ng-container *ngIf="player.expanded; else collapsed">
+							<smart-detailed-player-card [player]="player" (onClick)="onClickPlayer($event, 'medio')"></smart-detailed-player-card>
+						</ng-container>
+						<ng-template #collapsed>
+							<smart-player-card [player]="player" (onClick)="onClickPlayer($event, 'medio')"></smart-player-card>
+						</ng-template>
+					</ng-container>
+				</div>
+				<div class="position-header">
+					<p>Avançado</p>
+				</div>
+				<div class="row">
+					<ng-container *ngFor="let player of avancados">
+						<ng-container *ngIf="player.expanded; else collapsed">
+							<smart-detailed-player-card [player]="player" (onClick)="onClickPlayer($event, 'avancado')"></smart-detailed-player-card>
+						</ng-container>
+						<ng-template #collapsed>
+							<smart-player-card [player]="player" (onClick)="onClickPlayer($event, 'avancado')"></smart-player-card>
+						</ng-template>
+					</ng-container>
+				</div>
+			</tab>
+			<tab [active]="selectedPill===2">
+				<div class="row">
+					<ng-container *ngFor="let coach of treinadores">
+						<smart-coach-card [coach]="coach"></smart-coach-card>
+					</ng-container>
+				</div>
+			</tab>         
+		</tabset>
+	</div>
+</ng-container>

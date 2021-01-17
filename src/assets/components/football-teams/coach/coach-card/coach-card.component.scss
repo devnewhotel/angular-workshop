@@ -1,0 +1,64 @@
+div.coach-container {
+	width: auto;
+	background-color: #eee;
+	padding: 25px 20px 10px 25px;
+
+	img {
+		float: left;
+		padding-right: 3%;
+	}
+
+	.coach-info {
+		display: block;
+		color: black;
+		padding: 7px 8px;
+
+		*:not(button):not(i) {
+			margin-bottom: 12px;
+		}
+
+		p {
+			margin: 0;
+		}
+
+		.coach-name {
+			font-size: 26px;
+			text-transform: uppercase;
+		}
+
+		.coach-position-birthdate {
+			font-size: 17px;
+		}
+
+		.coach-biography {
+			display: flex;
+			align-items: center;
+			font-size: 16px;
+			font-weight: 500;
+			border-top: 1px solid #c7c7c7;
+			border-bottom: 1px solid #c7c7c7;
+			padding: 10px 0 10px 15px;
+
+			&:hover {
+				cursor: pointer;
+			}
+
+			.expand-biography {
+				margin-left: auto;
+				color: #666;
+				border: 0;
+				background-color: transparent;
+	
+				i {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+	.biography-text {
+		font-size: 15px;
+		padding-left: 220px;
+		margin-bottom: 5px;
+	}
+}

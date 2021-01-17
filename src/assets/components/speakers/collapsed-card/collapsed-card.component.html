@@ -1,0 +1,38 @@
+<div class="speaker-container">
+	<img [src]="data.photo">
+	<div class="speaker-info">
+		<p class="speaker-name">{{ data.name }}</p>
+		<p class="speaker-company">{{ data.company }}</p>
+		<p class="speaker-job">{{ data.job }}</p>
+	</div>
+	<div class="speaker-footer">
+		<div class="actions">
+			<a *ngIf="data.website" [href]="data.website" target="_blank">
+				<button type="button"><i class="fal fa-globe"></i></button>
+			</a>
+			<a *ngIf="data.twitter" [href]="data.twitter" target="_blank">
+				<button type="button"><i class="fab fa-twitter"></i></button>
+			</a>
+			<a *ngIf="data.linkedin" [href]="data.linkedin" target="_blank">
+				<button type="button"><i class="fab fa-linkedin"></i></button>
+			</a>
+			<a *ngIf="data.github" [href]="data.github" target="_blank">
+				<button type="button"><i class="fab fa-github"></i></button>
+			</a>
+		</div>
+		<button type="button" class="expand-comment" (click)="toggleCollapsed()">
+			<!-- <i class="fas fa-chevron-down"></i> -->
+			<i class="fas" [ngClass]="{ 'fa-chevron-down': !expanded, 'fa-chevron-up': expanded }"></i>
+		</button>
+	</div>
+	<div *ngIf="expanded">
+		<div class="speaker-separator">
+			<div class="line"></div>
+			<div class="circle"></div>
+			<div class="line"></div>
+		</div>
+		<div class="speaker-description">
+			<p>{{ data.description }}</p>
+		</div>
+	</div>
+</div>

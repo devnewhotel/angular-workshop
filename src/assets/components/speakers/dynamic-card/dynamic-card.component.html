@@ -1,0 +1,38 @@
+<div class="speaker-container">
+	<img [src]="speaker.photo">
+	<div class="speaker-info">
+		<p class="speaker-name">{{ speaker.name }}</p>
+		<p class="speaker-company">{{ speaker.company }}</p>
+		<p class="speaker-job">{{ speaker.job }}</p>
+	</div>
+	<div class="speaker-footer">
+		<div class="actions">
+			<a *ngIf="speaker.website" [href]="speaker.website" target="_blank">
+				<button type="button"><i class="fal fa-globe"></i></button>
+			</a>
+			<a *ngIf="speaker.twitter" [href]="speaker.twitter" target="_blank">
+				<button type="button"><i class="fab fa-twitter"></i></button>
+			</a>
+			<a *ngIf="speaker.linkedin" [href]="speaker.linkedin" target="_blank">
+				<button type="button"><i class="fab fa-linkedin"></i></button>
+			</a>
+			<a *ngIf="speaker.github" [href]="speaker.github" target="_blank">
+				<button type="button"><i class="fab fa-github"></i></button>
+			</a>
+		</div>
+		<button *ngIf="speaker.description" type="button" class="expand-comment" (click)="toggleCollapsed()">
+			<!-- <i class="fas fa-chevron-down"></i> -->
+			<i class="fas" [ngClass]="{ 'fa-chevron-down': !expanded, 'fa-chevron-up': expanded }"></i>
+		</button>
+	</div>
+	<div *ngIf="expanded">
+		<div class="speaker-separator">
+			<div class="line"></div>
+			<div class="circle"></div>
+			<div class="line"></div>
+		</div>
+		<div class="speaker-description">
+			<p>{{ speaker.description }}</p>
+		</div>
+	</div>
+</div>

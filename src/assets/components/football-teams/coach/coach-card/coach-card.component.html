@@ -1,0 +1,23 @@
+<div class="coach-container" (click)="onClickCard()">
+	<img [src]="coach.photo">
+	<div class="coach-info">
+		<p class="coach-name">{{ coach.name }}</p>
+		<div class="coach-position-birthdate">
+			Função: 
+			<strong>{{ coach.position }}</strong>
+		</div>
+		<div class="coach-position-birthdate">
+			Data de Nascimento: 
+			<strong>{{ coach.birthdate }}</strong>
+		</div>
+		<div class="coach-biography" (click)="toggleCollapsed()">
+			Biografia
+			<button type="button" class="expand-biography">
+				<i class="fas" [ngClass]="{ 'fa-chevron-down': !expanded, 'fa-chevron-up': expanded }"></i>
+			</button>
+		</div>
+	</div>
+	<ng-container *ngIf="expanded">
+		<div [innerHTML]="coach.biography" class="biography-text"></div>
+	</ng-container>
+</div>

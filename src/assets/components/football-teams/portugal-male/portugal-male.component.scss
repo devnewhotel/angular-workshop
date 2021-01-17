@@ -1,0 +1,49 @@
+.panel-toolbar {
+	justify-content: center;
+	margin-bottom: 10px;
+
+	.players-pill.active {
+		background-color: green;
+	}
+
+	.coaches-pill.active {
+		color: white;
+		background-color: red;
+
+		&:hover {
+			color: black;
+		}
+	}
+
+	&:hover {
+		color: black;
+	}
+}
+
+.position-header {
+	width: 232px;
+	text-transform: uppercase;
+	color: white;
+	background-color: black;
+	padding: 5px 0 5px 33px;
+	margin-left: -32px;
+
+	p {
+		margin: 0;
+	}
+}
+
+.row {
+	justify-content: left;
+	margin-left: -15px;
+
+	smart-player-card,
+	smart-detailed-player-card,
+	smart-coach-card {
+		padding: 15px;
+	}
+
+	smart-coach-card {
+		width: 100%;
+	}
+}
